@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const MovieSchema = new Schema({
-    id: Number,
-    title: String
+    id: { type: Number, required: true},
+    title: { type: String, required: true}
   });
   
   const UserSchema = new Schema({
@@ -13,4 +13,9 @@ const MovieSchema = new Schema({
     favourites: [MovieSchema]
   });
 
+  const GenreSchema = new Schema({
+    id: { type: Number, required: true},
+    title: { type: String, required: true}
+  });
+  
 export default mongoose.model('User', UserSchema);
