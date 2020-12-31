@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt-nodejs';
 const Schema = mongoose.Schema;
   
 const UserSchema = new Schema({
-    username: { type: String, unique: true, required: true},
+    username: { type: String, unique: true, required: true },
     password: {type: String, required: true },
     favourites: [{type: mongoose.Schema.Types.ObjectId, ref: 'Movies'}]
   });
@@ -26,6 +26,7 @@ const UserSchema = new Schema({
         cb(null, isMatch);
     });
 };
+
 
 UserSchema.pre('save', function(next) {
   const user = this;
