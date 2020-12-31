@@ -25,7 +25,6 @@ const errHandler = (err, req, res, next) => {
   res.status(500).send(`Hey!! You caught the error 👍👍, ${err.stack} `);
 }; 
 
-
 const app = express();
 
 const port = process.env.PORT;
